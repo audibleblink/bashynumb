@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Thanks to arr0way for the section and banner code and some of the 
+# enum calls - https://highon.coffee/blog/linux-local-enumeration-script
+
 BLACK="\033[30m"
 RED="\033[31m"
 GREEN="\033[32m"
