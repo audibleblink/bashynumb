@@ -45,11 +45,12 @@ function section() {
   printf "\n"
   printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' '#'
   printf "$NORMAL"
+  printf "\n"
 }
 
 section "Current User Info"
 /usr/bin/id
-echo
+echo on
 /bin/hostname
 
 section "Linux Version"
@@ -61,11 +62,11 @@ section "Kernel Info"
 /bin/uname -ar
 
 section "Network Info"
-/bin/cat /etc/sysconfig/network
+/bin/cat /etc/network/interfaces || /bin/cat /etc/sysconfig/network
 echo
 /bin/cat /etc/resolv.conf
 echo
-ifconfig -a|| ip addr
+ifconfig -a || ip addr
 echo
 route || ip route
 
@@ -85,36 +86,36 @@ section "Users"
 section "Groups"
 /bin/cat /etc/group
 
-section "SUID Files"
-/usr/bin/find / -perm -g=s -o -perm -4000 ! -type l -exec ls -ld {} \; 2>/dev/null
-
-section "World Writable Directories"
-/usr/bin/find / -perm -222 -type d 2>/dev/null
-
-section "World Writable Files"
-/usr/bin/find / -type f -perm 0777 2>/dev/null
-
-section "Root-owned, Writable Files"
-find / -type f -user root -writable -exec ls -ld {} \; 2>/dev/null
-
-section "Root-owned, Writable and Executable Files"
-find / -type f -executable -user root -writable -exec ls -ld {} \; 2>/dev/null
-
-section "Current User Sessions"
-/usr/bin/w
-
-section "Processes Running as root"
-/bin/ps -ef | /bin/grep root | /bin/grep -ve "\]$"
-
-section "Commands User Can Run with sudo"
-test [ echo 1 | sudo -S -l ] 2>/dev/null || echo "${USER} has no passwordless sudo commands configured"
-
 section "Cron Info"
 /bin/ls -lah /etc/cron*
 echo
 /bin/cat /etc/crontab
 echo
 /usr/bin/crontab -l
+
+section "SUID Files"
+/usr/bin/find / -perm -g=s -o -perm -4000 ! -type l -exec ls -ld {} \; 2>/dev/null | column -t
+
+section "Root-owned, Writable and Executable Files"
+/usr/bin/find / -type f -executable -user root -writable -exec ls -ld {} \; 2>/dev/null | column -t
+
+section "Root-owned, Writable Files"
+/usr/bin/find / -type f -user root -writable -exec ls -ld {} \; 2>/dev/null | column -t
+
+section "World Writable Directories"
+/usr/bin/find / -perm -222 -type d -exec ls -ld {} \; 2>/dev/null | column -t
+
+section "World Writable Files"
+/usr/bin/find / -type f -perm 0777 -exec ls -lah {} \; 2>/dev/null | column -t
+
+section "Commands User Can Run with sudo"
+test [ echo 1 | sudo -S -l ] 2>/dev/null || echo "${USER} has no passwordless sudo commands configured"
+
+section "Current User Sessions"
+/usr/bin/w
+
+section "Processes Running as root"
+/bin/ps -ef | /bin/grep root | /bin/grep -ve "\]$"
 
 section "Installed Packages"
 /usr/bin/dpkg --list
