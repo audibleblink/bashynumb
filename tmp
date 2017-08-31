@@ -1,0 +1,464 @@
+  _                _                             _
+ | |              | |                           | |
+ | | _   ____  ___| | _  _   _ ____  _   _ ____ | | _
+ | || \ / _  |/___) || \| | | |  _ \| | | |    \| || \
+ | |_) | ( | |___ | | | | |_| | | | | |_| | | | | |_) )
+ |____/ \_||_(___/|_| |_|\__  |_| |_|\____|_|_|_|____/
+                        (____/
+Version:  1.0  
+Twitter:  @4lex  
+
+ Disclaimer: Use this 'software' at your own risk.   
+
+
+###################################################################################################################
+##
+##  Current User Info
+##
+###################################################################################################################
+
+uid=1000(red) gid=1000(red) groups=1000(red),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),108(netdev),111(bluetooth),999(docker),1001(vnet)
+on
+blade
+
+
+###################################################################################################################
+##
+##  Linux Version
+##
+###################################################################################################################
+
+Debian GNU/Linux buster/sid \n \l
+
+
+PRETTY_NAME="Debian GNU/Linux buster/sid"
+NAME="Debian GNU/Linux"
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+
+
+###################################################################################################################
+##
+##  Kernel Info
+##
+###################################################################################################################
+
+Linux blade 4.11.0-1-amd64 #1 SMP Debian 4.11.6-1 (2017-06-19) x86_64 GNU/Linux
+
+
+###################################################################################################################
+##
+##  Network Info
+##
+###################################################################################################################
+
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+domain localdomain
+search localdomain
+nameserver 192.168.1.1
+
+enp0s31f6: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 54:ee:75:aa:32:f5  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 16  memory 0xf1200000-f1220000  
+
+enp0s31f6:avahi: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 169.254.10.104  netmask 255.255.0.0  broadcast 169.254.255.255
+        ether 54:ee:75:aa:32:f5  txqueuelen 1000  (Ethernet)
+        device interrupt 16  memory 0xf1200000-f1220000  
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 158891  bytes 130920395 (124.8 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 158891  bytes 130920395 (124.8 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+vmnet1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.16.143.1  netmask 255.255.255.0  broadcast 172.16.143.255
+        inet6 fe80::250:56ff:fec0:1  prefixlen 64  scopeid 0x20<link>
+        ether 00:50:56:c0:00:01  txqueuelen 1000  (Ethernet)
+        RX packets 274  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 15327  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+vmnet8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.186.1  netmask 255.255.255.0  broadcast 192.168.186.255
+        inet6 fe80::250:56ff:fec0:8  prefixlen 64  scopeid 0x20<link>
+        ether 00:50:56:c0:00:08  txqueuelen 1000  (Ethernet)
+        RX packets 426  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 15205  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlp4s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.208  netmask 255.255.255.0  broadcast 192.168.1.255
+        ether 72:d2:ff:f2:e5:0b  txqueuelen 1000  (Ethernet)
+        RX packets 30631249  bytes 18731675861 (17.4 GiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 37798101  bytes 16829416047 (15.6 GiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         setup.ubnt.com  0.0.0.0         UG    0      0        0 wlp4s0
+default         0.0.0.0         0.0.0.0         U     1002   0        0 enp0s31f6
+link-local      0.0.0.0         255.255.0.0     U     0      0        0 enp0s31f6
+172.16.143.0    0.0.0.0         255.255.255.0   U     0      0        0 vmnet1
+192.168.1.0     0.0.0.0         255.255.255.0   U     0      0        0 wlp4s0
+192.168.186.0   0.0.0.0         255.255.255.0   U     0      0        0 vmnet8
+
+
+###################################################################################################################
+##
+##  Active Listening Services
+##
+###################################################################################################################
+
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:17600         0.0.0.0:*               LISTEN      1618/dropbox        
+tcp        0      0 127.0.0.1:17603         0.0.0.0:*               LISTEN      1618/dropbox        
+tcp        0      0 0.0.0.0:902             0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:5939          0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:8307          0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:53            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:17500           0.0.0.0:*               LISTEN      1618/dropbox        
+tcp6       0      0 :::902                  :::*                    LISTEN      -                   
+tcp6       0      0 :::111                  :::*                    LISTEN      -                   
+tcp6       0      0 ::1:8307                :::*                    LISTEN      -                   
+tcp6       0      0 ::1:25                  :::*                    LISTEN      -                   
+tcp6       0      0 :::443                  :::*                    LISTEN      -                   
+tcp6       0      0 :::17500                :::*                    LISTEN      1618/dropbox        
+udp        0      0 0.0.0.0:43683           0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:45570           0.0.0.0:*                           1899/firefox.real   
+udp        0      0 0.0.0.0:5353            0.0.0.0:*                           -                   
+udp        0      0 127.0.0.1:53            0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:111             0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:719             0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:17500           0.0.0.0:*                           1618/dropbox        
+udp6       0      0 :::60532                :::*                                1899/firefox.real   
+udp6       0      0 :::36721                :::*                                -                   
+udp6       0      0 :::5353                 :::*                                -                   
+udp6       0      0 :::111                  :::*                                -                   
+udp6       0      0 :::719                  :::*                                -                   
+
+
+###################################################################################################################
+##
+##  File System Info
+##
+###################################################################################################################
+
+Filesystem      Size  Used Avail Use% Mounted on
+udev            7.8G     0  7.8G   0% /dev
+tmpfs           1.6G   54M  1.6G   4% /run
+/dev/sda5       217G  174G   32G  85% /
+tmpfs           7.8G  762M  7.1G  10% /dev/shm
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           7.8G     0  7.8G   0% /sys/fs/cgroup
+/dev/sda1       256M   30M  227M  12% /boot/efi
+tmpfs           1.6G   24K  1.6G   1% /run/user/1000
+encfs           217G  174G   32G  85% /home/red/Private
+
+sysfs           on  /sys                             type  sysfs                (rw,nosuid,nodev,noexec,relatime)
+proc            on  /proc                            type  proc                 (rw,nosuid,nodev,noexec,relatime)
+udev            on  /dev                             type  devtmpfs             (rw,nosuid,relatime,size=8138744k,nr_inodes=2034686,mode=755)
+devpts          on  /dev/pts                         type  devpts               (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs           on  /run                             type  tmpfs                (rw,nosuid,noexec,relatime,size=1630112k,mode=755)
+/dev/sda5       on  /                                type  ext4                 (rw,relatime,errors=remount-ro,data=ordered)
+securityfs      on  /sys/kernel/security             type  securityfs           (rw,nosuid,nodev,noexec,relatime)
+tmpfs           on  /dev/shm                         type  tmpfs                (rw,nosuid,nodev)
+tmpfs           on  /run/lock                        type  tmpfs                (rw,nosuid,nodev,noexec,relatime,size=5120k)
+tmpfs           on  /sys/fs/cgroup                   type  tmpfs                (ro,nosuid,nodev,noexec,mode=755)
+cgroup          on  /sys/fs/cgroup/unified           type  cgroup2              (rw,nosuid,nodev,noexec,relatime)
+cgroup          on  /sys/fs/cgroup/systemd           type  cgroup               (rw,nosuid,nodev,noexec,relatime,xattr,name=systemd)
+pstore          on  /sys/fs/pstore                   type  pstore               (rw,nosuid,nodev,noexec,relatime)
+efivarfs        on  /sys/firmware/efi/efivars        type  efivarfs             (rw,nosuid,nodev,noexec,relatime)
+cgroup          on  /sys/fs/cgroup/net_cls,net_prio  type  cgroup               (rw,nosuid,nodev,noexec,relatime,net_cls,net_prio)
+cgroup          on  /sys/fs/cgroup/devices           type  cgroup               (rw,nosuid,nodev,noexec,relatime,devices)
+cgroup          on  /sys/fs/cgroup/cpu,cpuacct       type  cgroup               (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+cgroup          on  /sys/fs/cgroup/perf_event        type  cgroup               (rw,nosuid,nodev,noexec,relatime,perf_event)
+cgroup          on  /sys/fs/cgroup/blkio             type  cgroup               (rw,nosuid,nodev,noexec,relatime,blkio)
+cgroup          on  /sys/fs/cgroup/memory            type  cgroup               (rw,nosuid,nodev,noexec,relatime,memory)
+cgroup          on  /sys/fs/cgroup/freezer           type  cgroup               (rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup          on  /sys/fs/cgroup/cpuset            type  cgroup               (rw,nosuid,nodev,noexec,relatime,cpuset)
+cgroup          on  /sys/fs/cgroup/pids              type  cgroup               (rw,nosuid,nodev,noexec,relatime,pids)
+systemd-1       on  /proc/sys/fs/binfmt_misc         type  autofs               (rw,relatime,fd=39,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=3765)
+debugfs         on  /sys/kernel/debug                type  debugfs              (rw,relatime)
+hugetlbfs       on  /dev/hugepages                   type  hugetlbfs            (rw,relatime)
+mqueue          on  /dev/mqueue                      type  mqueue               (rw,relatime)
+sunrpc          on  /run/rpc_pipefs                  type  rpc_pipefs           (rw,relatime)
+/dev/sda1       on  /boot/efi                        type  vfat                 (rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro)
+binfmt_misc     on  /proc/sys/fs/binfmt_misc         type  binfmt_misc          (rw,relatime)
+fusectl         on  /sys/fs/fuse/connections         type  fusectl              (rw,relatime)
+vmware-vmblock  on  /run/vmblock-fuse                type  fuse.vmware-vmblock  (rw,nosuid,nodev,relatime,user_id=0,group_id=0,default_permissions,allow_other)
+tmpfs           on  /run/user/1000                   type  tmpfs                (rw,nosuid,nodev,relatime,size=1630108k,mode=700,uid=1000,gid=1000)
+encfs           on  /home/red/Private                type  fuse.encfs           (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000,default_permissions)
+tracefs         on  /sys/kernel/debug/tracing        type  tracefs              (rw,relatime)
+
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/sda5 during installation
+UUID=41bac933-7c1c-4d50-940c-310c29715c1b /               ext4    errors=remount-ro 0       1
+# /boot/efi was on /dev/sda1 during installation
+UUID=84D1-FC1A  /boot/efi       vfat    umask=0077      0       1
+# swap was on /dev/sda6 during installation
+UUID=a0ecaaa4-3526-4fb8-a73d-be2f6da43263 none            swap    sw              0       0
+
+# usb drives
+/dev/sdb1 /media/red/usb auto user,umask=000,utf8,noauto 0 0
+# /dev/sdb /media/red/bunny auto user,umask=000,utf8,noauto 0 0
+/dev/mmcblk0p1 /media/red/sdcard auto user,umask=000,utf8,noauto 0 0
+
+# backup share for crashplan
+#192.168.1.5:/mnt/tank/backup /mnt/backup nfs user=alex 0 0
+
+
+###################################################################################################################
+##
+##  Users
+##
+###################################################################################################################
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:100:102:systemd Time Synchronization,,,:/run/systemd:/bin/false
+systemd-network:x:101:103:systemd Network Management,,,:/run/systemd/netif:/bin/false
+systemd-resolve:x:102:104:systemd Resolver,,,:/run/systemd/resolve:/bin/false
+systemd-bus-proxy:x:103:105:systemd Bus Proxy,,,:/run/systemd:/bin/false
+_apt:x:104:65534::/nonexistent:/bin/false
+dqcachelog:x:105:65534:dqcachelog user,,,:/nonexistent:/bin/false
+dqcache:x:106:65534:dqcache user,,,:/nonexistent:/bin/false
+dnsmasq:x:107:65534:dnsmasq,,,:/var/lib/misc:/bin/false
+avahi-autoipd:x:108:109:Avahi autoip daemon,,,:/var/lib/avahi-autoipd:/bin/false
+messagebus:x:109:110::/var/run/dbus:/bin/false
+usbmux:x:110:46:usbmux daemon,,,:/var/lib/usbmux:/bin/false
+avahi:x:111:113:Avahi mDNS daemon,,,:/var/run/avahi-daemon:/bin/false
+sshd:x:112:65534::/var/run/sshd:/usr/sbin/nologin
+red:x:1000:1000:red,,,:/home/red:/usr/bin/zsh
+rtkit:x:115:115:RealtimeKit,,,:/proc:/bin/false
+pulse:x:116:116:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+postgres:x:117:119:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
+geoclue:x:118:120::/var/lib/geoclue:/bin/false
+debian-tor:x:113:122::/var/lib/tor:/bin/false
+Debian-exim:x:119:128::/var/spool/exim4:/bin/false
+saned:x:114:123::/var/lib/saned:/bin/false
+colord:x:120:124:colord colour management daemon,,,:/var/lib/colord:/bin/false
+clamav:x:121:129::/var/lib/clamav:/bin/false
+statd:x:122:65534::/var/lib/nfs:/bin/false
+libvirt-qemu:x:64055:127:Libvirt Qemu,,,:/var/lib/libvirt:/bin/false
+uuidd:x:123:131::/run/uuidd:/bin/false
+
+
+###################################################################################################################
+##
+##  Groups
+##
+###################################################################################################################
+
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:red
+floppy:x:25:red
+tape:x:26:
+sudo:x:27:red
+audio:x:29:red,pulse
+dip:x:30:red
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:
+video:x:44:red
+sasl:x:45:
+plugdev:x:46:red
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-timesync:x:102:
+systemd-network:x:103:
+systemd-resolve:x:104:
+systemd-bus-proxy:x:105:
+input:x:106:
+crontab:x:107:
+netdev:x:108:red
+avahi-autoipd:x:109:
+messagebus:x:110:
+bluetooth:x:111:red
+ssh:x:112:
+avahi:x:113:
+red:x:1000:
+rtkit:x:115:
+pulse:x:116:
+pulse-access:x:117:
+ssl-cert:x:118:postgres
+postgres:x:119:
+geoclue:x:120:
+docker:x:999:red
+adb:x:121:
+debian-tor:x:122:
+lpadmin:x:125:
+i2c:x:126:
+kvm:x:127:
+Debian-exim:x:128:
+vnet:x:1001:red
+scanner:x:114:saned
+saned:x:123:
+colord:x:124:
+clamav:x:129:
+libvirt:x:130:
+libvirt-qemu:x:64055:libvirt-qemu
+uuidd:x:131:
+
+
+###################################################################################################################
+##
+##  Cron Info
+##
+###################################################################################################################
+
+-rw-r--r-- 1 root root  722 May 14  2015 /etc/crontab
+
+/etc/cron.d:
+total 28K
+drwxr-xr-x   2 root root 4.0K Aug  2 19:02 .
+drwxr-xr-x 156 root root  12K Aug 30 19:17 ..
+-rw-r--r--   1 root root  285 May 29 12:36 anacron
+-rw-r--r--   1 root root  102 May 14  2015 .placeholder
+-rw-r--r--   1 root root  396 Jul  3  2016 sysstat
+
+/etc/cron.daily:
+total 80K
+drwxr-xr-x   2 root root 4.0K Aug 24 23:33 .
+drwxr-xr-x 156 root root  12K Aug 30 19:17 ..
+-rwxr-xr-x   1 root root  311 Dec 28  2014 0anacron
+-rwxr-xr-x   1 root root 1.5K Aug 11  2016 apt-compat
+-rwxr-xr-x   1 root root  355 Mar 28  2016 bsdmainutils
+-rwxr-xr-x   1 root root 2.2K Jul 24 17:06 chkrootkit
+-rwxr-xr-x   1 root root 1.6K Apr 25  2016 dpkg
+-rwxr-xr-x   1 root root 4.1K Mar  2  2016 exim4-base
+lrwxrwxrwx   1 root root   37 Aug 22 23:17 google-chrome -> /opt/google/chrome/cron/google-chrome
+lrwxrwxrwx   1 root root   45 Dec  8  2015 google-talkplugin -> /opt/google/talkplugin/cron/google-talkplugin
+-rwxr-xr-x   1 root root  11K Aug 21 15:34 keybase
+-rwxr-xr-x   1 root root 2.2K Apr 13  2014 locate
+-rwxr-xr-x   1 root root   89 Feb 19  2009 logrotate
+-rwxr-xr-x   1 root root 1.1K Dec 13  2016 man-db
+-rwxr-xr-x   1 root root  249 Nov 19  2014 passwd
+-rw-r--r--   1 root root  102 May 14  2015 .placeholder
+-rwxr-xr-x   1 root root  441 Jul  3  2016 sysstat
+
+/etc/cron.hourly:
+total 20K
+drwxr-xr-x   2 root root 4.0K May  3 23:23 .
+drwxr-xr-x 156 root root  12K Aug 30 19:17 ..
+-rw-r--r--   1 root root  102 May 14  2015 .placeholder
+
+/etc/cron.monthly:
+total 24K
+drwxr-xr-x   2 root root 4.0K Jun 21 19:29 .
+drwxr-xr-x 156 root root  12K Aug 30 19:17 ..
+-rwxr-xr-x   1 root root  313 Dec 28  2014 0anacron
+-rw-r--r--   1 root root  102 May 14  2015 .placeholder
+
+/etc/cron.weekly:
+total 32K
+drwxr-xr-x   2 root root 4.0K Aug 23 21:06 .
+drwxr-xr-x 156 root root  12K Aug 30 19:17 ..
+-rwxr-xr-x   1 root root  312 Dec 28  2014 0anacron
+-rwxr-xr-x   1 root root  723 Dec 13  2016 man-db
+-rw-r--r--   1 root root  102 May 14  2015 .placeholder
+-rwxr-xr-x   1 root root  322 Aug 25  2016 tor
+
+# /etc/crontab: system-wide crontab
+# Unlike any other crontab you don't have to run the `crontab'
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# m h dom mon dow user	command
+17 *	* * *	root    cd / && run-parts --report /etc/cron.hourly
+25 6	* * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+#
+
+
+
+###################################################################################################################
+##
+##  SUID Files
+##
+###################################################################################################################
+
